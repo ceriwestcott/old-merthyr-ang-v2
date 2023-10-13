@@ -1,0 +1,22 @@
+{
+  "name": "old-merthyr-ang-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/old-merthyr-ang-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/playwright:playwright",
+      "outputs": ["{workspaceRoot}/dist/.playwright/apps/old-merthyr-ang-e2e"],
+      "options": {
+        "config": "apps/old-merthyr-ang-e2e/playwright.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/old-merthyr-ang-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "implicitDependencies": ["old-merthyr-ang"]
+}
